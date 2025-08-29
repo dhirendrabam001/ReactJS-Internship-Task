@@ -1,48 +1,18 @@
 import AppName from "./components/AppName";
+import AddToDo from "./components/AddToDo";
+import ToDoItems1 from "./components/ToDoItems1";
+import ToDoItems2 from "./components/ToDoItems2";
+import "./App.css";
 
 function App() {
   return (
-    <div>
+    <div className="main py-4">
       <center className="center-content">
         <AppName />
-        <div class="row">
-          <div class="col-5">
-            <input type="text" placeholder="Enter TODO Here..." />
-          </div>
-          <div class="col-5">
-            <input type="date" />
-          </div>
-          <div class="col-2">
-            <button type="button" class="btn btn-success">
-              Add
-            </button>
-          </div>
-        </div>
-
-        {/* second */}
-        <div class="row">
-          <div class="col-5">
-            <h6>Milk Buy</h6>
-          </div>
-          <div class="col-5">06/05/2025</div>
-          <div class="col-2">
-            <button type="button" class="btn btn-danger">
-              Delete
-            </button>
-          </div>
-        </div>
-
-        {/* third */}
-        <div class="row">
-          <div class="col-5">
-            <h6>Go TO College</h6>
-          </div>
-          <div class="col-5">04/08/2025</div>
-          <div class="col-2">
-            <button type="button" class="btn btn-danger">
-              Delete
-            </button>
-          </div>
+        <AddToDo />
+        <div className="items-container">
+          <ToDoItems1 />
+          <ToDoItems2 />
         </div>
       </center>
     </div>
