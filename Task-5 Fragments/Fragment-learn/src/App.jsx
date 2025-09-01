@@ -1,4 +1,7 @@
 import "./App.css";
+import ErrorMsz from "./components/ErrorMsz";
+import FootdItemss from "./components/foodItems";
+import Items from "./components/Items";
 
 function App() {
   // return (
@@ -30,19 +33,16 @@ function App() {
 
   // using fragment remove unneccessary div second method using <>
   // also using map
-  let footItems = ["daal", "rooti", "rice", ",milk", "dahi"];
+
+  let footItems = ["daal", "sabzi", "rooti", "rice", ",milk", "dahi"];
+  // let footItems = [];
+
   return (
     <>
-      <h1>Learn Fragments</h1>;
-      <ul className="list-group">
-        {footItems.map((items) => {
-          return (
-            <li key={items} className="list-group-item">
-              {items}
-            </li>
-          );
-        })}
-      </ul>
+      <h1>Learn Fragments</h1>
+      <ErrorMsz items={footItems} />
+      <FootdItemss items={footItems} />
+      <Items />
     </>
   );
 }
