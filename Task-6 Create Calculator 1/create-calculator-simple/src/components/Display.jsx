@@ -1,6 +1,13 @@
 import styles from "../components/Display.module.css";
-const Display = () => {
-  return <input className={styles.display} type="text" />;
+const Display = ({ displayName }) => {
+  return (
+    <input
+      className={styles.display}
+      type="text"
+      value={displayName}
+      readOnly
+    />
+  );
 };
 
 export default Display;
