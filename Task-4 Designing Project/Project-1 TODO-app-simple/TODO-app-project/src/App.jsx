@@ -6,16 +6,14 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="main py-4">
-      <center className="center-content">
-        <AppName />
+    <center className="todo-container py-4">
+      <AppName />
+      <div className="container">
         <AddToDo />
-        <div className="items-container">
-          <ToDoItems1 />
-          <ToDoItems2 />
-        </div>
-      </center>
-    </div>
+        <ToDoItems1 />
+        <ToDoItems2 />
+      </div>
+    </center>
   );
 }
 

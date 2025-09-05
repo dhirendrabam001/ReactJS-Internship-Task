@@ -1,18 +1,12 @@
 function ToDoItems2() {
+  let toDoName = "Go To College";
+  let toDoDate = "04/07/2025";
   return (
-    <div className="container">
-      <div className="row info-row">
-        <div className="col-5">
-          <h6>Go TO College</h6>
-        </div>
-        <div className="col-5">
-          <h6>04/08/2025</h6>
-        </div>
-        <div className="col-2">
-          <button type="button" className="btn btn-danger btn-info">
-            Delete
-          </button>
-        </div>
+    <div className="row text-white justify-content-center align-items-center mt-4">
+      <div className="col-lg-6 col-md-6">{toDoName}</div>
+      <div className="col-lg-3 col-md-3">{toDoDate}</div>
+      <div className="col-lg-3 col-md-3">
+        <button className="btn btn-danger btn-info">Delete</button>
       </div>
     </div>
   );

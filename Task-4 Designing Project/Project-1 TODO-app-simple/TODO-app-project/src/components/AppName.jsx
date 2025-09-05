@@ -1,5 +1,5 @@
 function AppName() {
-  return <h2 className="fs-bold fs-1 my-3">TODO React APP</h2>;
+  return <h1 className="fs-1 text-bold text-white">WELCOME TO OUR TODO APP</h1>;
 }
 
 export default AppName;
