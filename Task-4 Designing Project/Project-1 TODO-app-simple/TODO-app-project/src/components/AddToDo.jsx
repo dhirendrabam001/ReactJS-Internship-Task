@@ -13,8 +13,8 @@ function AddToDo({ addNewItems }) {
 
   const handleAddButtonClicked = () => {
     addNewItems(toDoName, toDoDate);
-    setToDoName();
-    setToDoDate();
+    setToDoName("");
+    setToDoDate("");
   };
 
   return (

@@ -1,4 +1,4 @@
-function ToDoItem({ toDoName, toDoDate }) {
+function ToDoItem({ toDoName, toDoDate, onDeleteClick }) {
   return (
     <div className="row text-white justify-content-center align-items-center mt-4">
       <div className="col-lg-6 col-md-6">{toDoName}</div>

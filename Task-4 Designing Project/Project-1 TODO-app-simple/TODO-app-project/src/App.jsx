@@ -3,6 +3,7 @@ import "./App.css";
 import AddToDo from "./components/AddToDo";
 import ToDoItems from "./components/toDoItems";
 import { useState } from "react";
+import WelcomeMsz from "./components/WelcomMsz";
 
 function App() {
   const toDoItemsList = [
@@ -24,6 +25,14 @@ function App() {
 
   const newItemsInfo = (itemsname, itemsdate) => {
     console.log(`New items is: ${itemsname} and ${itemsdate}`);
+
+    const newItemsData = [...toDoItems, { name: itemsname, date: itemsdate }];
+
+    setToDoItems(newItemsData);
+  };
+
+  const handleDeleteItems = (itemName) => {
+    console.log(`Delete name is ${itemName}`);
   };
 
   return (
@@ -31,7 +40,11 @@ function App() {
       <div className="container">
         <AppName />
         <AddToDo addNewItems={newItemsInfo} />
-        <ToDoItems toDoItemsList={toDoItemsList} />
+        <WelcomeMsz />
+        <ToDoItems
+          toDoItemsList={toDoItems}
+          onDeleteClick={handleDeleteItems}
+        />
       </div>
     </center>
   );
