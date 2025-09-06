@@ -1,6 +1,4 @@
-function ToDoItems2() {
-  let toDoName = "Go To College";
-  let toDoDate = "04/07/2025";
+function ToDoItem({ toDoName, toDoDate }) {
   return (
     <div className="row text-white justify-content-center align-items-center mt-4">
       <div className="col-lg-6 col-md-6">{toDoName}</div>
@@ -12,4 +10,4 @@ function ToDoItems2() {
   );
 }
 
-export default ToDoItems2;
+export default ToDoItem;
