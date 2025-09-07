@@ -1,3 +1,4 @@
+import { MdDelete } from "react-icons/md";
 function ToDoItem({ toDoName, toDoDate, onDeleteClick }) {
   return (
     <div className="row text-white justify-content-center align-items-center mt-4">
@@ -8,7 +9,7 @@ function ToDoItem({ toDoName, toDoDate, onDeleteClick }) {
           className="btn btn-danger btn-info"
           onClick={() => onDeleteClick(toDoName)}
         >
-          Delete
+          <MdDelete />
         </button>
       </div>
     </div>
