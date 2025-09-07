@@ -32,7 +32,10 @@ function App() {
   };
 
   const handleDeleteItems = (itemName) => {
-    console.log(`Delete name is ${itemName}`);
+    const newToDoItemss = toDoItems.filter((items) => {
+      return items.name !== itemName;
+    });
+    setToDoItems(newToDoItemss);
   };
 
   return (

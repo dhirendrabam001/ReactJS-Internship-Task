@@ -4,7 +4,12 @@ function ToDoItem({ toDoName, toDoDate, onDeleteClick }) {
       <div className="col-lg-6 col-md-6">{toDoName}</div>
       <div className="col-lg-3 col-md-3">{toDoDate}</div>
       <div className="col-lg-3 col-md-3">
-        <button className="btn btn-danger btn-info">Delete</button>
+        <button
+          className="btn btn-danger btn-info"
+          onClick={() => onDeleteClick(toDoName)}
+        >
+          Delete
+        </button>
       </div>
     </div>
   );
