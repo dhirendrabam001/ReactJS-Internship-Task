@@ -1,0 +1,9 @@
+.media-container {
+  display: flex;
+}
+.media-content {
+  width: 100%;
+}
+.sidebar {
+  min-height: 640px;
+}
