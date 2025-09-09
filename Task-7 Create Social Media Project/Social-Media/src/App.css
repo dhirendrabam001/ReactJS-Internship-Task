@@ -4,6 +4,16 @@
 .media-content {
   width: 100%;
 }
+.card-info {
+  margin: 20px 40px;
+}
+.tags-btn {
+  margin: 0px 5px;
+}
+.reactions {
+  margin: 20px 0;
+  width: 100%;
+}
 .sidebar {
   min-height: 640px;
 }
