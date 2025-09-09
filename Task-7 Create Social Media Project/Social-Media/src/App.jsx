@@ -5,18 +5,21 @@ import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import PostAllList from "./Components/PostAllList";
 import Sidebar from "./Components/Sidebar";
+import PostListProvider from "./Store/PostAllList";
 function App() {
   const [selectTab, setSelectTab] = useState("Home");
 
   return (
-    <div className="media-container">
-      <Sidebar selectTab={selectTab} setSelectTab={setSelectTab} />
-      <div className="media-content">
-        <Header />
-        {selectTab === "Home" ? <PostAllList /> : <CreateForm />}
-        <Footer />
+    <PostListProvider>
+      <div className="media-container">
+        <Sidebar selectTab={selectTab} setSelectTab={setSelectTab} />
+        <div className="media-content">
+          <Header />
+          {selectTab === "Home" ? <PostAllList /> : <CreateForm />}
+          <Footer />
+        </div>
       </div>
-    </div>
+    </PostListProvider>
   );
 }
 

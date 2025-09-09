@@ -29,8 +29,7 @@ const Sidebar = ({ selectTab, setSelectTab }) => {
         <li
           className="nav-item"
           onClick={() => {
-            console.log("Clicked");
-            selectTab("Home");
+            setSelectTab("Home");
           }}
         >
           {" "}
@@ -55,9 +54,7 @@ const Sidebar = ({ selectTab, setSelectTab }) => {
         </li>{" "}
         <li
           onClick={() => {
-            console.log("Clicked");
-
-            selectTab("Create Post");
+            setSelectTab("Create Post");
           }}
         >
           {" "}
