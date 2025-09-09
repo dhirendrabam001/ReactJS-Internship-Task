@@ -17,3 +17,8 @@
 .sidebar {
   min-height: 640px;
 }
+.create-form {
+  width: 60%;
+  margin-left: 10%;
+  margin-top: 40px;
+}
