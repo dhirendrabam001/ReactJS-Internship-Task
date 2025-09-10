@@ -12,6 +12,8 @@ const postReducer = (currentPostList, action) => {
     newPostList = currentPostList.filter((data) => {
       return data.id !== action.payload.deleteid;
     });
+  } else if (action.type === "ADD_POST") {
+    newPostList = [action.payload, ...currentPostList];
   }
   return newPostList;
 };
@@ -19,7 +21,19 @@ const postReducer = (currentPostList, action) => {
 const PostAllListProvider = ({ children }) => {
   const [postList, dispatchList] = useReducer(postReducer, DEFAULT_POST);
 
-  const addPost = () => {};
+  const addPost = (userId, postTitle, postContent, postReactions, postTags) => {
+    dispatchList({
+      type: "ADD_POST",
+      payload: {
+        id: Date.now(),
+        title: postTitle,
+        body: postContent,
+        Reaction: postReactions,
+        userId: userId,
+        tags: postTags,
+      },
+    });
+  };
 
   const deletePost = (deleteid) => {
     dispatchList({
