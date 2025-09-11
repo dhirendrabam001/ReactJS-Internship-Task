@@ -2,8 +2,9 @@ import { createContext, useReducer } from "react";
 
 export const PostAllListData = createContext({
   postList: [],
-  addPostList: () => {},
-  deletePostList: () => {},
+  addPost: () => {},
+  addInitialPosts: () => {},
+  deletePost: () => {},
 });
 
 const postReducer = (currentPostList, action) => {
@@ -12,6 +13,8 @@ const postReducer = (currentPostList, action) => {
     newPostList = currentPostList.filter((data) => {
       return data.id !== action.payload.deleteid;
     });
+  } else if (action.type === "ADD_INITIAL_POSTS") {
+    newPostList = action.payload.posts;
   } else if (action.type === "ADD_POST") {
     newPostList = [action.payload, ...currentPostList];
   }
@@ -19,7 +22,7 @@ const postReducer = (currentPostList, action) => {
 };
 
 const PostAllListProvider = ({ children }) => {
-  const [postList, dispatchList] = useReducer(postReducer, DEFAULT_POST);
+  const [postList, dispatchList] = useReducer(postReducer, []);
 
   const addPost = (userId, postTitle, postContent, postReactions, postTags) => {
     dispatchList({
@@ -35,6 +38,15 @@ const PostAllListProvider = ({ children }) => {
     });
   };
 
+  const addInitialPosts = (posts) => {
+    dispatchList({
+      type: "ADD_INITIAL_POSTS",
+      payload: {
+        posts,
+      },
+    });
+  };
+
   const deletePost = (deleteid) => {
     dispatchList({
       type: "DELETE_POST",
@@ -45,30 +57,35 @@ const PostAllListProvider = ({ children }) => {
   };
   return (
     <PostAllListData.Provider
-      value={{ postList: postList, addPost: addPost, deletePost: deletePost }}
+      value={{
+        postList,
+        addPost,
+        addInitialPosts,
+        deletePost,
+      }}
     >
       {children}
     </PostAllListData.Provider>
   );
 };
 
-const DEFAULT_POST = [
-  {
-    id: "1",
-    title: "Dhirendra Bam",
-    body: "From Nepal",
-    Reaction: 2,
-    userId: "dhirendra_001",
-    tags: ["dhangadi", "doti", "kathmandu"],
-  },
-  {
-    id: "2",
-    title: "Shibani Bam",
-    body: "From Nepal",
-    Reaction: 3,
-    userId: "Shibani_001",
-    tags: ["Pokhara", "Kailali", "kathmandu"],
-  },
-];
+// const DEFAULT_POST = [
+//   {
+//     id: "1",
+//     title: "Dhirendra Bam",
+//     body: "From Nepal",
+//     Reaction: 2,
+//     userId: "dhirendra_001",
+//     tags: ["dhangadi", "doti", "kathmandu"],
+//   },
+//   {
+//     id: "2",
+//     title: "Shibani Bam",
+//     body: "From Nepal",
+//     Reaction: 3,
+//     userId: "Shibani_001",
+//     tags: ["Pokhara", "Kailali", "kathmandu"],
+//   },
+// ];
 
 export default PostAllListProvider;
